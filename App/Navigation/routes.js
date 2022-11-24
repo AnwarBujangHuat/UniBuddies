@@ -1,4 +1,5 @@
 export const routes={
   HOME:"Home",
-  LOGIN:'Login'
+  LOGIN:'Login',
+  BOTTOM_NAVIGATION:"Bottom"
 }

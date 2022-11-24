@@ -4,13 +4,18 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { routes } from '../../Navigation/routes';
+import { useSelector } from 'react-redux';
+import { getUser } from '../../Redux/User/selector';
+import { HomeComponents } from './components';
+import MyTabs from '../../Navigation/BottomNavigation';
 
 export const Home=({navigation})=>{
+  const userInfo =useSelector(getUser)
+
+  const props={
+    userInfo
+  }
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <TouchableOpacity onPress={()=>navigation.navigate(routes.LOGIN)}>
-        <Text>Home Screen</Text>
-      </TouchableOpacity>
-    </View>
+  <HomeComponents {...props}/>
   );
 }
