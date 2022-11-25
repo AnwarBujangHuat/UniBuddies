@@ -1,12 +1,13 @@
 import {
   TextInput,
   View,
+  StyleSheet,
   Image
 } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import { Colors } from '../../Themes';
 import { Icons } from '../../Icons';
+import { Colors } from '../../Colors';
 
 export const InputFields = ({ onChangeText, defValue, source, secret,hint }) => {
   return (
@@ -19,16 +20,16 @@ export const InputFields = ({ onChangeText, defValue, source, secret,hint }) => 
         clearButtonMode={'always'}
         onChangeText={onChangeText}
         overflow="hidden"
-        placeholderTextColor={EStyleSheet.value(Colors.primaryTextColor)}
+        placeholderTextColor={Colors.primaryTextColor}
         keyboardAppearance="dark"
         secureTextEntry={secret}
-        color={EStyleSheet.value(Colors.primaryTextColor)}
+        color={Colors.primaryTextColor}
         autoCorrect={false} />
     </View>
 
   );
 };
-const styles = EStyleSheet.create({
+const styles = StyleSheet.create({
   section: {
     backgroundColor: Colors.secondaryBackGroundColor,
     flexDirection: 'row',

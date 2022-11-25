@@ -3,10 +3,10 @@ import {
   Image,
   Text,
   TouchableOpacity,
+  StyleSheet,
   View
 } from 'react-native';
-import EStyleSheet from 'react-native-extended-stylesheet';
-import { Colors } from '../../Themes';
+import { Colors } from '../../Colors';
 import { Icons } from '../../Icons';
 // import {  GoogleSigninButton } from '@react-native-google-signin/google-signin';
 const { width } = Dimensions.get('window');
@@ -22,9 +22,9 @@ export const SocialButton = ({ onPress, icon }) => {
         alignSelf:'center',
         alignItems: 'center',
         padding: 15,
-        backgroundColor: EStyleSheet.value(Colors.secondaryBackGroundColor),
+        backgroundColor: Colors.secondaryBackGroundColor,
         shadowOffset: { width: -2, height: 3 },
-        shadowColor: EStyleSheet.value(Colors.primaryColor),
+        shadowColor: Colors.primaryColor,
         shadowOpacity: 0.2,
         shadowRadius: 3,
         elevation: 5,
@@ -33,7 +33,7 @@ export const SocialButton = ({ onPress, icon }) => {
         <Text style={{
           marginStart:10,
           alignSelf:'center',
-          color:  EStyleSheet.value('$secondaryTextColor'),
+          color:  Colors.secondaryTextColor,
           fontWeight: 'bold',
         }}>{'Sign in With Google'}</Text>
       </TouchableOpacity>
@@ -41,7 +41,7 @@ export const SocialButton = ({ onPress, icon }) => {
 
   );
 };
-const styles = EStyleSheet.create({
+const styles = StyleSheet.create({
   icon: {
     width: 30,
     height: 30,

@@ -1,5 +1,6 @@
 export const routes={
-  HOME:"Home",
+  HOME:"HOME",
   LOGIN:'Login',
+  PROFILE:'PROFILE',
   BOTTOM_NAVIGATION:"Bottom"
 }

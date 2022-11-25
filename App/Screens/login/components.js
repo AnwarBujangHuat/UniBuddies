@@ -2,12 +2,11 @@ import {
   Dimensions,
   SafeAreaView,
   StatusBar,
+  StyleSheet,
   Text,
   TouchableOpacity,
   View
 } from 'react-native';
-import EStyleSheet from 'react-native-extended-stylesheet';
-import { Colors } from '../../Themes';
 import LottieView from 'lottie-react-native';
 import icon from '../../Assets/stud.json';
 import password from '../../Assets/password.png';
@@ -16,6 +15,7 @@ import CheckBox from '@react-native-community/checkbox';
 import { InputFields } from '../../Components/Atoms/InputFields';
 import { SocialButton } from '../../Components/Atoms/SocialButton';
 import { String } from '../../Strings';
+import { Colors } from '../../Colors';
 
 const { width, height } = Dimensions.get('window');
 export const LoginComponents = props => {
@@ -39,15 +39,15 @@ export const LoginComponents = props => {
         <View style={styles.checkboxContainer}>
           <CheckBox
             value={isRememberMe}
-            onCheckColor={EStyleSheet.value(Colors.primaryColor)}
-            tintColor={EStyleSheet.value(Colors.primaryColor)}
-            onTintColor={EStyleSheet.value(Colors.primaryColor)}
+            onCheckColor={Colors.primaryColor}
+            tintColor={Colors.primaryColor}
+            onTintColor={Colors.primaryColor}
             boxType={'square'}
-            tintColors={EStyleSheet.value(Colors.primaryColor)}
+            tintColors={Colors.primaryColor}
             onValueChange={onClickRememberMe}
             style={{ height: 15, width: 15 }}
           />
-          <Text style={{ color: EStyleSheet.value('$secondaryTextColor'), textAlign: 'center', marginStart: 10, }}>Remember
+          <Text style={{ color: Colors.secondaryTextColor, textAlign: 'center', marginStart: 10, }}>Remember
             Me</Text>
         </View>
       </View>
@@ -58,7 +58,7 @@ export const LoginComponents = props => {
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonForget}>
-          <Text style={{ color: EStyleSheet.value(Colors.primaryTextColor), textAlign: 'center' }}>Forget
+          <Text style={{ color: Colors.primaryTextColor, textAlign: 'center' }}>Forget
             Password</Text>
         </TouchableOpacity>
         <SocialButton onPress={onGoogleButtonPress} icon={String.GOOGLE} />
@@ -70,7 +70,7 @@ export const LoginComponents = props => {
     </SafeAreaView>
   );
 };
-const styles = EStyleSheet.create({
+const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: Colors.backGroundColor
